@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: rebeccapurple;
+            font-size: xx-large;
+            font-weight: 900;
+        }
+        button {
+            background-color: aquamarine;
+            border: 5px solid blue;
+        }
+    </style>
+    <script>
+        // 함수 선언식
+        // 함수 표현식 (익명, 화살표 함수)
+        function buttonOnClick(){
+            alert('안녕하세요. 반갑습니다');
+        }
+        let button2OnClick = function(){
+            alert('안녕하세요. 반갑습니다');    
+        }
+        let button3OnClick  = () => alert('안녕하세요. 반갑습니다');
+
+    </script>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <button onclick="buttonOnClick()">클릭</button>
+</body>
+</html>
