@@ -1,0 +1,50 @@
+import { replace, useNavigate, useParams } from "react-router-dom";
+import Header from "../components/Header";
+import Button from "../components/Button";
+import Viewer from "../components/Viewer";
+import { useContext, useEffect, useState } from "react";
+import { DiaryStateContext } from "../App";
+import { getStringedDate } from "../util/get-stringed-date";
+
+const Diary = () => {
+    const params = useParams();
+    const nav = useNavigate();
+
+    const data = useContext(DiaryStateContext);
+    const [curDiaryItem, setCurDiaryItem] = useState();
+
+    useEffect(()=>{
+        const currentDiaryItem = data.find(
+            (item) => String(item.id) === String(params.id)
+        )
+        if(!currentDiaryItem) {
+            window.alert("존재하지 않은 일기입니다.")
+            nav("/", {replace: true})
+        }
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setCurDiaryItem(currentDiaryItem);
+    },[params.id, data]) // eslint-disable-line react-hooks/exhaustive-deps
+    
+    if (!curDiaryItem) {
+        return <div>데이터 로딩중...</div>
+    }
+    
+    const {createdDate, emotionId, content} = curDiaryItem;
+
+    const title = getStringedDate(new Date(createdDate));
+    return (
+        <div>
+            <Header 
+            title={`${title} 기록`}
+            leftChild={<Button 
+                onClick={()=> nav(-1)}
+                text={"< 뒤로가기"}/>}
+            rightChild={<Button 
+                onClick={()=> nav(`/edit/${params.id}`)}
+                text={"수정하기"}/>}
+            />
+            <Viewer emotionId={emotionId} content={content}/>
+        </div>
+    )
+}
+export default Diary;
