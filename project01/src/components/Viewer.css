@@ -1,0 +1,25 @@
+.Viewer .content_section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Viewer h4 {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.Viewer .content_wrapper {
+  min-height: 240px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+}
+
+.Viewer .content_wrapper p {
+  color: var(--text-h);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.7;
+}

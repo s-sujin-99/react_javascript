@@ -1,0 +1,35 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header_left,
+.header_right {
+  flex: 0 0 auto;
+  min-width: 72px;
+  display: flex;
+  gap: 8px;
+}
+
+.header_right {
+  justify-content: flex-end;
+}
+
+.header_center {
+  flex: 1;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+@media (max-width: 480px) {
+  .header_center {
+    font-size: 18px;
+  }
+}

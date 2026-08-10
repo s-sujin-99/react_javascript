@@ -1,0 +1,66 @@
+.Editor {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.Editor section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Editor h4 {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.Editor input[type='date'] {
+  align-self: flex-start;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.Editor textarea {
+  min-height: 240px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.Editor input[type='date']:focus,
+.Editor textarea:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.Editor .button_section {
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.title_section {
+  margin-bottom: 20px;
+}
+
+.title_input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.title_input:focus {
+  outline: none;
+  border-color: #646cff;
+}

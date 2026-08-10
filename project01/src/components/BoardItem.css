@@ -1,0 +1,51 @@
+.BoardItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.BoardItem:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.BoardItem .info_section {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.BoardItem .created_date {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.BoardItem .title {
+  font-weight: bold;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.BoardItem .content {
+  color: var(--text-h);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.BoardItem .button_section {
+  flex: 0 0 auto;
+}
